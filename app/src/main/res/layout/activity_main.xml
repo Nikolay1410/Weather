@@ -7,55 +7,55 @@
     android:background="@drawable/sunny"
     tools:context=".MainActivity">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.33" />
+    <ImageView
+        android:id="@+id/imageViewTitle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.56"
+        app:srcCompat="@drawable/sunny"
+        android:contentDescription="@string/title" />
+
 
     <EditText
         android:id="@+id/editTextCity"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:autoText="false"
+        android:layout_height="32dp"
         android:background="@color/black"
         android:backgroundTint="@color/white"
         android:ems="10"
         android:hint="@string/input_sity"
         android:inputType="textPersonName"
-        android:textSize="24sp"
-        android:layout_margin="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="@+id/imageViewTitle"
+        app:layout_constraintStart_toStartOf="@+id/imageViewTitle"
+        app:layout_constraintEnd_toStartOf="@+id/buttonShowWeather" />
+
+    <ImageView
+        android:id="@+id/buttonShowWeather"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@color/white"
+        android:onClick="onClickShowWeather"
+        app:layout_constraintTop_toTopOf="@id/imageViewTitle"
+        app:layout_constraintEnd_toEndOf="@id/imageViewTitle"
+        app:srcCompat="@android:drawable/ic_search_category_default"
+        android:contentDescription="@string/search" />
 
     <TextView
         android:id="@+id/textViewWeather"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:textAlignment="gravity"
-        android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:textSize="28sp"
         android:textStyle="bold"
-        android:layout_margin="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonShowWeather" />
-
-    <Button
-        android:id="@+id/buttonShowWeather"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#993C525C"
-        android:onClick="onClickShowWeather"
-        android:text="@string/show_weather"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_margin="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewTitle"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewTitle"
+        app:layout_constraintStart_toStartOf="@+id/imageViewTitle"
         app:layout_constraintTop_toBottomOf="@+id/editTextCity" />
 </androidx.constraintlayout.widget.ConstraintLayout>
